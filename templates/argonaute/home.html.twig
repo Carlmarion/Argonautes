@@ -1,0 +1,37 @@
+
+{% extends "base.html.twig" %}
+
+{% block body %}
+
+    
+  <!-- New member form -->
+  <h2>Ajouter un(e) Argonaute</h2>
+<div class="new-member-form">
+  {{form_start(argonauteForm)}}
+
+  {{form_row(argonauteForm)}}
+
+  <button type="submit" class="btn btn-primary" placeholder="Ulysse31">Ajouter un argonaute</button>
+
+  {{form_end(argonauteForm)}}
+  </div>
+  {# <form class="new-member-form">
+    <label for="name">Nom de l&apos;Argonaute</label>
+    <input id="name" name="name" type="text" placeholder="Charalampos" />
+    <button type="submit">Envoyer</button>
+  </form> #}
+  
+
+
+  <!-- Member list -->
+  <h2>Membres de l'équipage</h2>
+  <section class="member-list">
+  {% for argonaute in argonautes %}
+    <div class="member-item">{{argonaute.nom}}</div>
+
+  {% endfor %}
+  </section>
+  {% endblock %}
+
+
+
